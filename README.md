@@ -10,8 +10,11 @@
 ├─ daily/      日记（Markdown / MDX）
 ├─ pages/      独立页面
 ├─ spec/       关于页正文（about.mdx）
+├─ public/     静态资源（favicon、头像、图片、OG 图等）
 └─ config/     站点配置（site.ts）与友链配置（links.ts）
 ```
+
+内容模式下 Astro 的 `publicDir` 指向 `public/`，与主题仓库的 `public/` 完全隔离：主题模式的资源不会复制进内容模式的 `dist/`，站内统一用 `/images/...` 这样的根路径引用。
 
 ## 在主题仓库里使用
 
@@ -44,7 +47,10 @@
    pnpm check:content
    pnpm build:content
    pnpm preview:content
+   pnpm og:content
    ```
+
+   `pnpm og:content` 会按本仓库的 `config/site.ts` 生成 `public/og-default.png`；修改站点标题、作者或 `since` 后重新运行并提交图片。
 
 也可以临时指定目录：`pnpm dev:content --content-repo=../daybook-content`。
 
