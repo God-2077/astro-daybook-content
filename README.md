@@ -1,6 +1,6 @@
 # Daybook 内容仓库
 
-这是 Daybook 主题的独立内容仓库示例。主题代码仓库通过 `CONTENT_REPO` 指向本目录，从而读取这里的内容与配置。
+这是 [Daybook 主题](https://github.com/God-2077/astro-daybook/) 的独立内容仓库示例。主题代码仓库通过 `CONTENT_REPO` 指向本目录，从而读取这里的内容与配置。
 
 ## 目录
 
