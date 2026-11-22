@@ -1,0 +1,9 @@
+{
+  "name": "astro-daybook-content",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@jsquash/webp": "^1.5.0"
+  }
+}

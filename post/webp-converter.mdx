@@ -1,0 +1,20 @@
+---
+date: 2026-11-22 13:38:56
+title: 内容仓库依赖示例：自带依赖的 WebP 转换器
+description: 一个内容仓库依赖示例：组件、样式、Worker 和 @jsquash/webp 依赖都由内容仓库自带，构建前自动安装。
+categories: [随笔]
+tags: [内容仓库, 依赖, WebP, 示例]
+comments: true
+permalink: webp-converter
+---
+
+import WebpConverter from './webp-converter/WebpConverter';
+import './webp-converter/style.css';
+
+**这是一篇内容仓库依赖示例。** 下面的转换器不是主题内置组件，而是从内容仓库的 `post/webp-converter/` 导入：`WebpConverter.tsx` 负责界面，`worker.ts` 负责编码，`style.css` 负责样式，`package.json` 声明了唯一的依赖 `@jsquash/webp`。
+
+<WebpConverter client:load />
+
+`pnpm dev:content` / `pnpm build:content` 启动前会自动安装内容仓库的依赖，再照常构建。它验证的是：内容仓库不只能放 Markdown，也能放带自己依赖的交互组件。
+
+至于工具本身：把图片拖进去即可，单张上限 50 MB，全程在浏览器本地转换，不上传。Quality 越高画质越好、文件越大；Effort 越高压缩越慢、通常更小。
